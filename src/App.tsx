@@ -14,7 +14,7 @@ function App() {
 
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
-    const handleDropdownChange = (e: React.ChangeEvent<HTMLInputElement>) => setDropdown(e.target.value)
+    const handleDropdownChange = (e: React.ChangeEvent<HTMLInputElement>) => {setDropdown(e.target.value); setSearchTerm("")};
 
 
     function isSearchResult(episode: IEpisode, term: string): boolean {
