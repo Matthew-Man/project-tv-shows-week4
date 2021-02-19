@@ -16,16 +16,24 @@ function App() {
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
     const handleDropdownChange = (e: React.ChangeEvent<HTMLInputElement>) => setDropdown(e.target.value)
 
+
     function isSearchResult(episode: IEpisode, term: string): boolean {
         const isNameIncluded = episode.name.toLowerCase().includes(term);
         const isSummaryIncluded = episode.summary.toLowerCase().includes(term);
         return isNameIncluded || isSummaryIncluded;
     };
 
+    
+    function isDropdownResult(episode: IEpisode, dropdown: string): boolean {
+        return episode.id.toString().includes(dropdown)
+    };
 
-    function calculateMatchingEpisodes(term: string): IEpisode[] {
-        if (term === "") {
+
+    function calculateMatchingEpisodes(term: string, dropdown: string): IEpisode[] {
+        if (term === "" && dropdownSelect === "0") {
             return episodesArray;
+        } else if (dropdownSelect != "0") {
+            return episodesArray.filter((episode) => isDropdownResult(episode, dropdown))
         } else {
             return episodesArray.filter((episode) => isSearchResult(episode, term.toLowerCase()));
         };
@@ -38,7 +46,7 @@ function App() {
                 search={searchTerm}
                 changeActionInput={handleSearchChange}
                 changeActionDropdown={handleDropdownChange}
-                numberResults={calculateMatchingEpisodes(searchTerm).length} 
+                numberResults={calculateMatchingEpisodes(searchTerm, dropdownSelect).length} 
                 maxResults={episodesArray.length}
                 allEpisodes={episodesArray}
             />
@@ -46,14 +54,12 @@ function App() {
     };
 
 
-    console.log(dropdownSelect)
-
     return (
         <div className="main-container">
             <Header />
             {addSearchBar()}
             <div className="all-episodes-flex">
-                {calculateMatchingEpisodes(searchTerm).map(createEpisodeCard)}
+                {calculateMatchingEpisodes(searchTerm, dropdownSelect).map(createEpisodeCard)}
             </div>
         </div>
     );

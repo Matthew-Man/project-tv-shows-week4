@@ -3,13 +3,13 @@ import "./search_bar.css";
 
 
 export default function SearchBar(props: SearchInfo): JSX.Element {
-    const { search, changeActionInput, changeActionDropdown, numberResults, maxResults, allEpisodes } = props
-    const showResultNumber = (): string => (numberResults === maxResults) ? `Showing all ${maxResults} episodes` : `Displaying ${numberResults}/${maxResults} episode`
+    const { search, changeActionInput, changeActionDropdown, numberResults, maxResults, allEpisodes } = props;
+    const showResultNumber = (): string => (numberResults === maxResults) ? `Showing all ${maxResults} episodes` : `Displaying ${numberResults}/${maxResults} episode`;
 
 
     function padEpisodeCode(unpadded: number): string {
         return unpadded < 10 ? `0${unpadded}` : unpadded.toString();
-    }
+    };
 
 
     return (
