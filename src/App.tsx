@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
     const episodesArray = data;
-    const singleTestEpisode = episodesArray[0];
+    // const singleTestEpisode = episodesArray[0];
 
     return (
         <div className="all-episodes-flex">
@@ -14,6 +14,6 @@ function App() {
             {React.Children.toArray(episodesArray.map(createEpisodeCard))}
         </div>
     );
-}
+};
 
 export default App;
