@@ -1,0 +1,15 @@
+.header-container {
+    height: 80px;
+    position: relative;
+    background-color: #3f4452;
+}
+
+.header-container h1 {
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 40px;
+    padding-right: 40px;
+}
