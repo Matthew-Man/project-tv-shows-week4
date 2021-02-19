@@ -1,6 +1,6 @@
 import React from "react";
 import data from "./episodes.json";
-import EpisodeCard from "./components/episodecard"
+import EpisodeCard from "./components/episode_card"
 import IEpisode from "./components/interface";
 
 

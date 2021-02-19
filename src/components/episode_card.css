@@ -1,0 +1,34 @@
+h2 {
+    text-align: center;
+}
+
+img {
+    width: 240px;
+    height: 150px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+p {
+    word-break: break-all;
+}
+
+.title-container {
+    text-align: center;
+    padding: 5px;
+    border-color: #dbdbdb;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.episode-card {
+    height: auto;
+    width: 300px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.image-container {
+    text-align: center;
+}
