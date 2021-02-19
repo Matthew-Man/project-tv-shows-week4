@@ -34,7 +34,7 @@ function EpisodeCard(props : IEpisode) {
                 <h2>{name} - S{season}E{number}</h2>
             </div>
             <div className="image-container">
-                <img src={image.original} alt="Episode image cover"/>
+                <img src={image.original} alt="Episode cover"/>
             </div>
             <div className="text-continer">
                 <p>{summary.substring(3).slice(0,-4)}</p>
