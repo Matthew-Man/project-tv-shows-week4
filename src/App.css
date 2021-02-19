@@ -1,0 +1,5 @@
+.all-episodes-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

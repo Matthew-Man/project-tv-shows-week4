@@ -1,7 +1,32 @@
 import IEpisode from "./interface";
 import "./episode_card.css"
 
-export default function EpisodeCard(props : IEpisode) {
+
+//Need to build correct season and episode code with zeros included if S or E is < 10 - e.g. "S08E01"
+
+
+function createEpisodeCard(props: IEpisode) {
+    return(
+        <EpisodeCard 
+            id={props.id}
+            url={props.url}
+            name={props.name}
+            season={props.season}
+            number={props.number}
+            type={props.type}
+            airdate={props.airdate}
+            airtime={props.airtime}
+            airstamp={props.airstamp}
+            runtime={props.runtime}
+            image={props.image}
+            summary={props.summary}
+            _links={props._links}
+        />
+    )
+}
+
+
+function EpisodeCard(props : IEpisode) {
     const {id, url, name, season, number, type, airdate, airtime, airstamp, runtime, image, summary, _links} = props;
     return (
         <div className="episode-card">
@@ -12,8 +37,10 @@ export default function EpisodeCard(props : IEpisode) {
                 <img src={image.original} alt="Episode image cover"/>
             </div>
             <div className="text-continer">
-                {summary.substring(3).slice(0,-4)}
+                <p>{summary.substring(3).slice(0,-4)}</p>
             </div>
         </div>
     )
 }
+
+export default createEpisodeCard
