@@ -21,5 +21,7 @@ export interface IEpisode {
 export interface SearchInfo {
     search: string;
     changeAction: any;
+    numberResults: number;
+    maxResults: number;
 }
 

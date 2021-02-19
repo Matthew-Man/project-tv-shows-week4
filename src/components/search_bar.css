@@ -1,9 +1,15 @@
-input {
+.searchbar-container {
+    background-color: #e2e2e2;
+    padding: 20px 40px;
+}
+
+.searchbar-container input {
     height: 25px;
     width: 400px;
 }
 
-.searchbar-container {
-    background-color: #e2e2e2;
-    padding: 20px 40px;
+.result-info {
+    color: #696969;
+    font-size: 14px;
+    padding-left: 10px;
 }

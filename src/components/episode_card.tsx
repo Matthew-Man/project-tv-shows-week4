@@ -32,16 +32,16 @@ function EpisodeCard(props : IEpisode) {
 
     const filtedUnwantedTags = (unfiltered: string): string => unfiltered.replace(/(<([^>]+)>)/ig, "");
     
-    //create function - pad left number - same action
-    const createSeasonNumber = season < 10 ? `0${season}` : season;
-    const createEpNumber = number < 10 ? `0${number}` : number;
-    
+    function padEpisodeCode(unpadded: number): string {
+        return unpadded < 10 ? `0${unpadded}` : unpadded.toString();
+    }
+
 
     return (
         <div className="episode-card">
             <div className="title-container">
                 <span className="title">{name}</span><br/>
-                <span className="episode-code">S{createSeasonNumber}E{createEpNumber}</span>
+                <span className="episode-code">S{padEpisodeCode(season)}E{padEpisodeCode(number)}</span>
             </div>
             <div className="image-container">
                 <img src={image.medium} alt={imageAltDesc}/>

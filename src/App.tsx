@@ -12,7 +12,7 @@ function App() {
     const [searchTerm, setSearchTerm] = useState("");
 
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value.toLowerCase());
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
 
 
     function isSearchResult(episode: IEpisode, term: string): boolean {
@@ -26,16 +26,15 @@ function App() {
         if (term === "") {
             return episodesArray;
         } else {
-            return episodesArray.filter((episode) => isSearchResult(episode, term));
+            return episodesArray.filter((episode) => isSearchResult(episode, term.toLowerCase()));
         };
     };
 
-    console.log(calculateMatchingEpisodes("wint"));
 
     return (
         <div className="main-container">
             <Header />
-            <SearchBar search={searchTerm} changeAction={handleSearchChange}/>
+            <SearchBar search={searchTerm} changeAction={handleSearchChange} numberResults={calculateMatchingEpisodes(searchTerm).length} maxResults={episodesArray.length}/>
             <div className="all-episodes-flex">
                 {calculateMatchingEpisodes(searchTerm).map(createEpisodeCard)}
             </div>

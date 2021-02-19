@@ -1,11 +1,11 @@
-img {
+.episode-card img {
     width: 240px;
     height: 150px;
     object-fit: cover;
     padding: 20px;
 }
 
-p {
+.episode-card p {
     font-size: 14px;
     word-break: normal;
     padding-left: 20px;
