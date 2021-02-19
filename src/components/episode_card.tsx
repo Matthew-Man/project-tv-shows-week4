@@ -1,4 +1,4 @@
-import IEpisode from "./interface";
+import { IEpisode } from "./interface";
 import "./episode_card.css";
 
 
@@ -27,11 +27,13 @@ function createEpisodeCard(props: IEpisode) {
 
 
 function EpisodeCard(props : IEpisode) {
-    const {id, url, name, season, number, type, airdate, airtime, airstamp, runtime, image, summary, _links} = props;
+    const {name, season, number, image, summary} = props;
     const imageAltDesc = name;
 
     const filtedUnwantedTags = (unfiltered: string): string => unfiltered.replace(/(<([^>]+)>)/ig, "");
-    const createSeasNumber = season < 10 ? `0${season}` : season;
+    
+    //create function - pad left number - same action
+    const createSeasonNumber = season < 10 ? `0${season}` : season;
     const createEpNumber = number < 10 ? `0${number}` : number;
     
 
@@ -39,7 +41,7 @@ function EpisodeCard(props : IEpisode) {
         <div className="episode-card">
             <div className="title-container">
                 <span className="title">{name}</span><br/>
-                <span className="episode-code">S{createSeasNumber}E{createEpNumber}</span>
+                <span className="episode-code">S{createSeasonNumber}E{createEpNumber}</span>
             </div>
             <div className="image-container">
                 <img src={image.medium} alt={imageAltDesc}/>

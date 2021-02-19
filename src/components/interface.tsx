@@ -1,4 +1,4 @@
-export default interface IEpisode {
+export interface IEpisode {
     id: number;
     url: string;
     name: string;
@@ -17,3 +17,9 @@ export default interface IEpisode {
     _links: { self: { href: string } };
 };
   
+
+export interface SearchInfo {
+    search: string;
+    changeAction: any;
+}
+
