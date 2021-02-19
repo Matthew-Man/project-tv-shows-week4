@@ -10,8 +10,8 @@ export interface IEpisode {
     airstamp: string;
     runtime: number;
     image: {
-      medium: string;
-      original: string;
+      medium: string | null;
+      original: string | null;
     };
     summary: string;
     _links: { self: { href: string } };

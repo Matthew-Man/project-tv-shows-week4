@@ -44,7 +44,7 @@ function EpisodeCard(props : IEpisode) {
                 <span className="episode-code">S{padEpisodeCode(season)}E{padEpisodeCode(number)}</span>
             </div>
             <div className="image-container">
-                <img src={image.medium} alt={imageAltDesc}/>
+                <img src={image.medium === null ? "https://www.ecpgr.cgiar.org/fileadmin/templates/ecpgr.org/Assets/images/No_Image_Available.jpg" : image.medium} alt={imageAltDesc}/>
             </div>
             <div className="text-continer">
                 <p>{filtedUnwantedTags(summary)}</p>
