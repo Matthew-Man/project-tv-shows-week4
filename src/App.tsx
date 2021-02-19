@@ -32,7 +32,7 @@ function App() {
     function calculateMatchingEpisodes(term: string, dropdown: string): IEpisode[] {
         if (term === "" && dropdownSelect === "0") {
             return episodesArray;
-        } else if (dropdownSelect != "0") {
+        } else if (dropdownSelect !== "0") {
             return episodesArray.filter((episode) => isDropdownResult(episode, dropdown))
         } else {
             return episodesArray.filter((episode) => isSearchResult(episode, term.toLowerCase()));
