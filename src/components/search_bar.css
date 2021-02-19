@@ -3,9 +3,14 @@
     padding: 20px 40px;
 }
 
+.searchbar-container select {
+    height: 31px;
+}
+
 .searchbar-container input {
     height: 25px;
     width: 400px;
+    padding-left: 5px;
 }
 
 .result-info {

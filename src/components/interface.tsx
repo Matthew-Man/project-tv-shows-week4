@@ -20,8 +20,10 @@ export interface IEpisode {
 
 export interface SearchInfo {
     search: string;
-    changeAction: any;
+    changeActionInput: any;
+    changeActionDropdown: any;
     numberResults: number;
     maxResults: number;
+    allEpisodes: IEpisode[];
 }
 

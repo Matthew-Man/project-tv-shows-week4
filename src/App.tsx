@@ -10,10 +10,11 @@ import { IEpisode } from "./components/interface";
 function App() {
     const episodesArray = data;
     const [searchTerm, setSearchTerm] = useState("");
+    const [dropdownSelect, setDropdown] = useState("0");
 
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
-
+    const handleDropdownChange = (e: React.ChangeEvent<HTMLInputElement>) => setDropdown(e.target.value)
 
     function isSearchResult(episode: IEpisode, term: string): boolean {
         const isNameIncluded = episode.name.toLowerCase().includes(term);
@@ -31,10 +32,26 @@ function App() {
     };
 
 
+    function addSearchBar() {
+        return (
+            <SearchBar 
+                search={searchTerm}
+                changeActionInput={handleSearchChange}
+                changeActionDropdown={handleDropdownChange}
+                numberResults={calculateMatchingEpisodes(searchTerm).length} 
+                maxResults={episodesArray.length}
+                allEpisodes={episodesArray}
+            />
+        );
+    };
+
+
+    console.log(dropdownSelect)
+
     return (
         <div className="main-container">
             <Header />
-            <SearchBar search={searchTerm} changeAction={handleSearchChange} numberResults={calculateMatchingEpisodes(searchTerm).length} maxResults={episodesArray.length}/>
+            {addSearchBar()}
             <div className="all-episodes-flex">
                 {calculateMatchingEpisodes(searchTerm).map(createEpisodeCard)}
             </div>
