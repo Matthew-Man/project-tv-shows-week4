@@ -51,7 +51,7 @@ function App() {
         console.log(data)
     }
     
-    // getDataset()
+    getDataset()
     // console.log(episodesArray)
     // setInterval(getDataset, 60000 * 60)
 
