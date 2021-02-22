@@ -18,7 +18,7 @@ function App() {
     
     
     async function getDataset() {
-        const url = "https://api.tvmaze.com/shows/83/episodes";
+        const url = "https://api.tvmaze.com/shows/82/episodes";
         const response = await fetch(url);
         const data = await response.json();
         setEpisodesArray(data) // constantly fetching and updating state
