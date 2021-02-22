@@ -18,8 +18,9 @@ function createEpisodeCard(props: IEpisode) {
             airtime={props.airtime}
             airstamp={props.airstamp}
             runtime={props.runtime}
-            image={props.image}
-            summary={props.summary}
+            // image={props.image}
+            image={props.image === null ? {medium: "https://www.ecpgr.cgiar.org/fileadmin/templates/ecpgr.org/Assets/images/No_Image_Available.jpg", original: "https://www.ecpgr.cgiar.org/fileadmin/templates/ecpgr.org/Assets/images/No_Image_Available.jpg"} : props.image}
+            summary={props.summary === null ? "No summary available" : props.summary}
             _links={props._links}
         />
     );
