@@ -36,6 +36,9 @@ function EpisodeCard(props : IEpisode) {
         return unpadded < 10 ? `0${unpadded}` : unpadded.toString();
     }
 
+    // function isImagesObNull(images: unknown): boolean {
+    //     return images === null;
+    // }
 
     return (
         <div className="episode-card">

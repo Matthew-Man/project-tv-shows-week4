@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import data from "./episodes.json";
+// import data from "./episodes.json";
 import createEpisodeCard from "./components/episode_card";
 import Header from "./components/general";
 import SearchBar from "./components/search_bar";
@@ -18,7 +18,7 @@ function App() {
     
     
     async function getDataset() {
-        const url = "https://api.tvmaze.com/shows/83/episodes";
+        const url = "https://api.tvmaze.com/shows/82/episodes";
         const response = await fetch(url);
         const data = await response.json();
         setEpisodesArray(data) // constantly fetching and updating state
