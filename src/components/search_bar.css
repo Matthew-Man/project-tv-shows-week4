@@ -5,12 +5,14 @@
 
 .searchbar-container select {
     height: 31px;
+    margin: 5px;
 }
 
 .searchbar-container input {
     height: 25px;
     width: 400px;
     padding-left: 5px;
+    margin: 5px;
 }
 
 .result-info {

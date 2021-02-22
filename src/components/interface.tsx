@@ -1,3 +1,5 @@
+import { ReactHTML } from "react";
+
 export interface IEpisode {
     id: number;
     url: string;
@@ -20,8 +22,8 @@ export interface IEpisode {
 
 export interface SearchInfo {
     search: string;
-    changeActionInput: any;
-    changeActionDropdown: any;
+    changeActionInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    changeActionDropdown: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     numberResults: number;
     maxResults: number;
     allEpisodes: IEpisode[];
