@@ -14,7 +14,7 @@ export interface IEpisode {
     image: {
       medium: string | null;
       original: string | null;
-    };
+    } | null;
     summary: string;
     _links: { self: { href: string } };
 };

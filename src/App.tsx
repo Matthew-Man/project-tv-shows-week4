@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 // import data from "./episodes.json";
-import createEpisodeCard from "./components/episode_card";
+import EpisodeCard from "./components/episode_card";
 import Header from "./components/general";
 import SearchBar from "./components/search_bar";
 import './App.css';
@@ -18,7 +18,7 @@ function App() {
     
     
     async function getDataset() {
-        const url = "https://api.tvmaze.com/shows/82/episodes";
+        const url = "https://api.tvmaze.com/shows/83/episodes";
         const response = await fetch(url);
         const data = await response.json();
         setEpisodesArray(data) // constantly fetching and updating state
@@ -70,7 +70,7 @@ function App() {
             <Header />
             {addSearchBar()}
             <div className="all-episodes-flex">
-                {calculateMatchingEpisodes(searchTerm, dropdownSelect).map(createEpisodeCard)}
+                {calculateMatchingEpisodes(searchTerm, dropdownSelect).map(props => <EpisodeCard {...props}/>)}
             </div>
         </div>
     );
