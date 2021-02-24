@@ -2,10 +2,6 @@ import { IEpisode } from "./interface";
 import "./episode_card.css";
 
 
-//Need to build correct season and episode code with zeros included if S or E is < 10 - e.g. "S08E01"
-//User regex instead of substring and slicing as there are randomly placed tags
-//Handle null function for strings and numbers
-
 // function createEpisodeCard(props: IEpisode) {
 //     return(
 //         <EpisodeCard 

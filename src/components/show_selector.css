@@ -1,0 +1,9 @@
+.showselector-container {
+    background-color: #e2e2e2;
+    padding: 20px 40px 0px;
+}
+
+.showselector-container select {
+    height: 31px;
+    margin: 5px;
+}

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import EpisodeCard from "./components/episode_card";
 import Header from "./components/general";
 import SearchBar from "./components/search_bar";
+import ShowSelector from "./components/show_selector";
 import './App.css';
 import { IEpisode } from "./components/interface";
 
@@ -12,10 +13,12 @@ function App() {
     const [episodesArray, setEpisodesArray] = useState(emptyEpisodesArray);
     const [searchTerm, setSearchTerm] = useState("");
     const [dropdownSelect, setDropdown] = useState("0");
+    const [showSelect, setShowSelect] = useState("0")
     
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
     const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {setDropdown(e.target.value); setSearchTerm("")};
-    
+    const handleShowDropdown = (e: React.ChangeEvent<HTMLSelectElement>) => setShowSelect(e.target.value);
+
     
     async function getDataset() {
         const url = "https://api.tvmaze.com/shows/83/episodes";
@@ -68,6 +71,7 @@ function App() {
     return (
         <div className="main-container">
             <Header />
+            {/* <ShowSelector handleDropdown={handleShowDropdown}/> */}
             {addSearchBar()}
             <div className="all-episodes-flex">
                 {calculateMatchingEpisodes(searchTerm, dropdownSelect).map(props => <EpisodeCard {...props}/>)}
