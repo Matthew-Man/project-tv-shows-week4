@@ -3,15 +3,14 @@ import data from "../shows.json";
 // import { ShowsInfo } from "./interface";
 
 
-export default function ShowSelector(handleDropdown: (e: React.ChangeEvent<HTMLSelectElement>) => void) {
+export default function ShowSelector(props: {handleDropdown: (e: React.ChangeEvent<HTMLSelectElement>) => void, showSelected: string}) {
     const allShows = data;
-    console.log(allShows)
+    
     return (
         <div className="showselector-container">
-            <select onChange={handleDropdown}>
-                <option value="0">Select a show...</option>
+            <select onChange={props.handleDropdown} value={props.showSelected}>
                 {allShows.map((show) => {
-                    <option value={show.id} key={show.id}>{show.name}</option>
+                    return <option value={show.id.toString()} key={show.id}>{show.name}</option>
                 })}
             </select>
         </div>

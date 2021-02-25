@@ -34,11 +34,6 @@ function EpisodeCard(props : IEpisode) {
         return unpadded < 10 ? `0${unpadded}` : unpadded.toString();
     }
 
-    // function isImagesObNull(images: unknown): boolean {
-    //     return images === null;
-    // }
-
-    //use optional chaining for image.medium when changings
 
     return (
         <div className="episode-card">
@@ -50,7 +45,7 @@ function EpisodeCard(props : IEpisode) {
                 <img src={image?.medium === null ? "https://www.ecpgr.cgiar.org/fileadmin/templates/ecpgr.org/Assets/images/No_Image_Available.jpg" : image?.medium} alt={imageAltDesc}/>
             </div>
             <div className="text-continer">
-                <p>{filtedUnwantedTags(summary === null ? "No summary available" : summary)}</p>
+                <p>{filtedUnwantedTags(summary === null || summary === "" ? "No summary available" : summary)}</p>
             </div>
         </div>
     );
