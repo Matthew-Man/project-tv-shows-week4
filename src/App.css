@@ -4,3 +4,8 @@
     justify-content: center;
     margin: 20px 40px;
 }
+
+.no-show {
+    background-color: #e2e2e2;
+    padding-bottom: 20px;
+}

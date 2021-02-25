@@ -13,7 +13,7 @@ function App() {
     const [episodesArray, setEpisodesArray] = useState(emptyEpisodesArray);
     const [searchTerm, setSearchTerm] = useState("");
     const [dropdownSelect, setDropdown] = useState("0");
-    const [showSelect, setShowSelect] = useState("82")
+    const [showSelect, setShowSelect] = useState("")
     
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
     const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {setDropdown(e.target.value); setSearchTerm("")};
@@ -74,9 +74,9 @@ function App() {
         <div className="main-container">
             <Header />
             <ShowSelector handleDropdown={handleShowDropdown} showSelected={showSelect}/>
-            {addSearchBar()}
+            {showSelect !== "" ? addSearchBar() : <div className="no-show"></div>}
             <div className="all-episodes-flex">
-                {calculateMatchingEpisodes(searchTerm, dropdownSelect).map(props => <EpisodeCard {...props}/>)}
+                {showSelect !== "" ? calculateMatchingEpisodes(searchTerm, dropdownSelect).map(props => <EpisodeCard {...props}/>) : <h3>Please select a show</h3>}
             </div>
         </div>
     );
